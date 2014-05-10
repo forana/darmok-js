@@ -55,5 +55,8 @@ $ mocha
   9 passing (7ms)
 ```
 
+## License
+MIT
+
 ## Changelog
 * 10/05/2014 - v0.1.0 - Initial push
