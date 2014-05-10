@@ -1,0 +1,30 @@
+{
+  "name": "darmok",
+  "version": "0.1.0",
+  "description": "Markov-based name generator",
+  "main": "src/darmok.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "lodash": "2.4.*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forana/darmok-js.git"
+  },
+  "keywords": [
+    "darmok",
+    "jalad",
+    "tanagra",
+    "markov",
+    "naming",
+    "nomenclature"
+  ],
+  "author": "Alex Foran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forana/darmok-js/issues"
+  },
+  "homepage": "https://github.com/forana/darmok-js"
+}
