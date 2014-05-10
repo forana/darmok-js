@@ -30,6 +30,10 @@ module.exports.weightedChoice = function(options, weights) {
     throw {"message": "weightedChoice() returned nothing"};
 };
 
+module.exports.randomChoice = function(options) {
+    return options[_.random(0, options.length - 1)];
+};
+
 /*
     Load a file and split it into trimmed lines, ignoring whitespace
 */

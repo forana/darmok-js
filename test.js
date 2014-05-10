@@ -38,6 +38,21 @@ describe("darmok", function() {
             });
         });
     });
+
+    describe("sentence", function() {
+        it("should error when no frames are given", expectFailure(function() {
+            darmok.sentence({}, {});
+        }));
+
+        it("should not error when no sentences are given", function() {
+            darmok.sentence({"hey": 1});
+        });
+
+        it("should return exactly what's given if one option is sent across the board", function() {
+            var result = darmok.sentence({"{who} am {name}": 1}, {who: ["I"], name: ["Groot"]}).generate();
+            assert(result == "I am Groot", "received " + result);
+        });
+    });
 });
 
 describe("util", function() {

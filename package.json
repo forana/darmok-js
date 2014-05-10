@@ -7,7 +7,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "lodash": "2.4.*"
+    "lodash": "2.4.*",
+    "stringformat": "*"
   },
   "repository": {
     "type": "git",

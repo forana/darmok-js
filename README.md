@@ -1,20 +1,36 @@
 # darmok.js
-A random word generator for node.js, named for an episode of Star Trek [http://en.wikipedia.org/wiki/Darmok](http://en.wikipedia.org/wiki/Darmok).
+A random name generator for node.js, named for an episode of Star Trek [http://en.wikipedia.org/wiki/Darmok](http://en.wikipedia.org/wiki/Darmok).
 
 ## Installation
 `npm install darmok`
 
 ## Usage
 ### darmok.markov(entries, lookbackDistance)
-Creates a name generator that will create words via Markov chain.
+Creates a generator that will create names via Markov chain.
 
 * `entries` - Array of words to train on. These are case-sensitive.
 * `lookbackDistance` - The number of previous characters to consider when choosing the next letter in a word. `1` would mean the previous letter is considered, and your results would be fairly random but somewhat make sens. `0` would mean no previous letters considered, and your results would be a nonsensical jumble. But, go too high and your results will just return the entries you gave it to train with. Observationally, `2` is a pretty good balance.
 
 Returns a `generator` object.
 
+### darmok.sentence(frames, categories)
+Creates a generator that will generate names based on a randomly-chosen string template and some categories of words.
+
+The templates are of the form:
+
+```This is a {template}```
+
+Where `{template}` is a placeholder for the string variable `template`.
+
+* `frames` - An object whose property names are sentence templates, and the corresponding values are the relative chance for that template to be selected (values don't have to total to 1, but they do have to total to positive).
+* `categories` - An object whose property names correspond to variables from the templates in `frames`, and the corresponding values are arrays of strings to be randomly chosen from for the values of those variables).
+
+(refer to `example.js` if this is confusing)
+
+Returns a `generator` object (which will entirely ignore `maxLength`).
+
 ### *generator*.generate([maxLength])
-Returns a generated word with an optional maximum length specified by `maxLength` (if not specified).
+Returns a generated name with an optional maximum length specified by `maxLength` (if not specified).
 
 No minimum length is guaranteed.
 
@@ -25,6 +41,9 @@ Reads a file synchronously and returns an array of trimmed non-empty entries. Us
 
 The parameters are the same as what's passed to `fs.readFileSync`. If not specified, options defaults to UTF-8 encoding.
 
+## Example
+See `example.js`.
+
 ## Tests
 Using mocha (recommend `npm install -g mocha`):
 
@@ -33,7 +52,7 @@ $ mocha
   
   ․․․․․․
 
-  6 passing (7ms)
+  9 passing (7ms)
 ```
 
 ## Changelog
