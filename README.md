@@ -1,5 +1,5 @@
 # darmok.js
-A random name generator for node.js, named for an episode of Star Trek [http://en.wikipedia.org/wiki/Darmok](http://en.wikipedia.org/wiki/Darmok).
+A random name generator for node.js, named for an episode of Star Trek ([http://en.wikipedia.org/wiki/Darmok](http://en.wikipedia.org/wiki/Darmok)).
 
 ## Installation
 `npm install darmok`
