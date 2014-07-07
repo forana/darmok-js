@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "lodash": "2.4.*",
-    "stringformat": "*"
+    "stringformat": "*",
+    "mocha": "*"
   },
   "repository": {
     "type": "git",
